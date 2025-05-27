@@ -26,6 +26,10 @@ public class ModelCidade {
         this.uf = uf;
     }
 
+    public ModelCidade() {
+
+    }
+
     // Getters and Setters
 
     public int getIdCidade() {

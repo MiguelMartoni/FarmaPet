@@ -1,4 +1,5 @@
 package com.FarmaPet.FarmaPet.Model;
+import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 
@@ -30,6 +31,17 @@ public abstract class ModelPessoa {
 
     @Column (nullable = false, length = 14)
     private String telefone;
+
+    public ModelPessoa(){}
+
+    public ModelPessoa(String nome, String cpf, LocalDate dataNasc, ModelEndereco endereco, String email, String telefone) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNasc = dataNasc;
+        this.endereco = endereco;
+        this.email = email;
+        this.telefone = telefone;
+    }
 
     public long getId() {
         return id;

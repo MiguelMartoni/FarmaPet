@@ -1,11 +1,6 @@
 package com.FarmaPet.FarmaPet.Model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "animal")
@@ -30,6 +25,10 @@ public class ModelAnimal {
     @Column(nullable = false)
     private float peso;
 
+    @ManyToOne
+    @JoinColumn(name = "cliente_id", nullable = false)
+    private ModelCliente cliente;
+
     public ModelAnimal(String especie, int id, int idade, String nome, float peso, String raca) {
         this.especie = especie;
         this.id = id;
@@ -37,6 +36,10 @@ public class ModelAnimal {
         this.nome = nome;
         this.peso = peso;
         this.raca = raca;
+    }
+
+    public ModelAnimal() {
+
     }
 
     public int getId() {

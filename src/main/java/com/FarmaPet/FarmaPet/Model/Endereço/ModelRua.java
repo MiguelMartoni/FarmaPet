@@ -19,6 +19,10 @@ public class ModelRua {
         this.idRua = idRua;
     }
 
+    public ModelRua() {
+
+    }
+
     public int getIdRua() {
         return idRua;
     }

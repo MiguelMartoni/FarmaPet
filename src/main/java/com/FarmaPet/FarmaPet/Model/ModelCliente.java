@@ -1,6 +1,9 @@
 package com.FarmaPet.FarmaPet.Model;
 
+import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -9,6 +12,13 @@ public class ModelCliente extends ModelPessoa {
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ModelAnimal> animais;
+
+    public ModelCliente(){}
+
+    public ModelCliente(String nome, String cpf, LocalDate dataNasc, ModelEndereco endereco, String email, String telefone, List<ModelAnimal> animais) {
+        super(nome, cpf, dataNasc, endereco, email, telefone);
+        this.animais = animais;
+    }
 
     public List<ModelAnimal> getAnimais() {
         return animais;

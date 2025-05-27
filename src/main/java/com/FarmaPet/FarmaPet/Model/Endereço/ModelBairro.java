@@ -20,6 +20,10 @@ public class ModelBairro {
         this.idBairro = idBairro;
     }
 
+    public ModelBairro() {
+
+    }
+
     public String getDescricao() {
         return descricao;
     }

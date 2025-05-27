@@ -12,7 +12,7 @@ public class ModelEndereco {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idEndereco;
+    private long idEndereco;
 
     private String cep;
     private String numero;
@@ -33,7 +33,7 @@ public class ModelEndereco {
     @JoinColumn(name = "id_uf")
     private ModelUf uf;
 
-    public ModelEndereco(ModelBairro bairro, String cep, ModelCidade cidade, int idEndereco, String numero, ModelRua rua, ModelUf uf) {
+    public ModelEndereco(ModelBairro bairro, String cep, ModelCidade cidade, long idEndereco, String numero, ModelRua rua, ModelUf uf) {
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
@@ -49,11 +49,11 @@ public class ModelEndereco {
 
     // Getters e Setters
 
-    public int getIdEndereco() {
+    public long getIdEndereco() {
         return idEndereco;
     }
 
-    public void setIdEndereco(int idEndereco) {
+    public void setIdEndereco(long idEndereco) {
         this.idEndereco = idEndereco;
     }
 

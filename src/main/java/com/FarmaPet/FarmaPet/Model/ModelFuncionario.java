@@ -1,6 +1,9 @@
 package com.FarmaPet.FarmaPet.Model;
 
+import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
 import jakarta.persistence.*;
+
+import java.time.LocalDate;
 
 @Entity
 @Table (name = "funcionario")
@@ -18,6 +21,16 @@ public class ModelFuncionario extends ModelPessoa {
 
     @Column(nullable = false)
     private boolean usuarioAtivo;
+
+    public ModelFuncionario(){}
+
+    public ModelFuncionario(String nome, String cpf, LocalDate dataNasc, ModelEndereco endereco, String email, String telefone, String nomeUsuario, String senha, ModelTipoCadastro tipoCadastro, boolean usuarioAtivo) {
+        super(nome, cpf, dataNasc, endereco, email, telefone);
+        this.nomeUsuario = nomeUsuario;
+        this.senha = senha;
+        this.tipoCadastro = tipoCadastro;
+        this.usuarioAtivo = usuarioAtivo;
+    }
 
     public String getNomeUsuario() {
         return nomeUsuario;
