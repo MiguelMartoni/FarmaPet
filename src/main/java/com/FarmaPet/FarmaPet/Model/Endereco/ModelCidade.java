@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.Model.Endereço;
+package com.FarmaPet.FarmaPet.Model.Endereco;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

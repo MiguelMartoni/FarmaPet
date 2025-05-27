@@ -1,15 +1,17 @@
-package com.FarmaPet.FarmaPet.Model.Endereço;
+package com.FarmaPet.FarmaPet.Model.Endereco;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jdk.jfr.Name;
 
 @Entity
 public class ModelUf {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Name("id_uf")
     private int idUf;
 
     private String sigla;
