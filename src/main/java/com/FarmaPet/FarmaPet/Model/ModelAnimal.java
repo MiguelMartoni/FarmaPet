@@ -1,6 +1,10 @@
 package com.FarmaPet.FarmaPet.Model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "animal")
@@ -27,15 +31,17 @@ public class ModelAnimal {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id", nullable = false)
+    @JsonBackReference
     private ModelCliente cliente;
 
-    public ModelAnimal(String especie, int id, int idade, String nome, float peso, String raca) {
-        this.especie = especie;
+    public ModelAnimal(int id, String nome, String especie, String raca, int idade, float peso, ModelCliente cliente) {
         this.id = id;
-        this.idade = idade;
         this.nome = nome;
-        this.peso = peso;
+        this.especie = especie;
         this.raca = raca;
+        this.idade = idade;
+        this.peso = peso;
+        this.cliente = cliente;
     }
 
     public ModelAnimal() {
@@ -89,5 +95,12 @@ public class ModelAnimal {
     public void setPeso(float peso) {
         this.peso = peso;
     }
-    
+
+    public ModelCliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(ModelCliente cliente) {
+        this.cliente = cliente;
+    }
 }
