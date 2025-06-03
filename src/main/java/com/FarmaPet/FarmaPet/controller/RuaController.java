@@ -1,6 +1,6 @@
 package com.FarmaPet.FarmaPet.Controller;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelRua;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
 import com.FarmaPet.FarmaPet.Service.RuaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelUf;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelUf;
 import com.FarmaPet.FarmaPet.Service.UfService;
 
 @RestController

@@ -1,6 +1,6 @@
 package com.FarmaPet.FarmaPet.Service;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelRua;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
 import com.FarmaPet.FarmaPet.Repository.RuaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

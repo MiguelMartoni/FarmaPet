@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelCidade;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelCidade;
 import com.FarmaPet.FarmaPet.Service.CidadeService;
 
 @RestController

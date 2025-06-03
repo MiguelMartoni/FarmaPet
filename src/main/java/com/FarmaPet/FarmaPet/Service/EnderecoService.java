@@ -1,11 +1,11 @@
 package com.FarmaPet.FarmaPet.Service;
 
 import com.FarmaPet.FarmaPet.DTOs.DtoEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelBairro;
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelCidade;
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelRua;
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelUf;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelBairro;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelCidade;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelUf;
 
 import com.FarmaPet.FarmaPet.Repository.*;
 import jakarta.persistence.EntityNotFoundException;

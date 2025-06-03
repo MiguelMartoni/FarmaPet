@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.controller;
+package com.FarmaPet.FarmaPet.Controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.FarmaPet.FarmaPet.Model.ModelAnimal;
 import com.FarmaPet.FarmaPet.Service.AnimalService;
-import com.FarmaPet.FarmaPet.dtos.DtoAnimal;
+import com.FarmaPet.FarmaPet.DTOs.DtoAnimal;
 
 import jakarta.validation.Valid;
 

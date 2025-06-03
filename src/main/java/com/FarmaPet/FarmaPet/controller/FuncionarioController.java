@@ -1,6 +1,6 @@
 package com.FarmaPet.FarmaPet.Controller;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.Model.ModelFuncionario;
 import com.FarmaPet.FarmaPet.Model.ModelTipoCadastro;
 import com.FarmaPet.FarmaPet.DTOs.DtoFuncionario;

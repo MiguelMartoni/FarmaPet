@@ -1,6 +1,6 @@
 package com.FarmaPet.FarmaPet.Model;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;

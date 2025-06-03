@@ -1,7 +1,7 @@
 package com.FarmaPet.FarmaPet.Controller;
 
 import com.FarmaPet.FarmaPet.DTOs.DtoEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelEndereco;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.Repository.EnderecoRepository;
 import com.FarmaPet.FarmaPet.Service.EnderecoService;
 

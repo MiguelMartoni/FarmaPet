@@ -5,7 +5,7 @@ import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.FarmaPet.FarmaPet.Model.Endereço.ModelUf;
+import com.FarmaPet.FarmaPet.Model.Endereco.ModelUf;
 import com.FarmaPet.FarmaPet.Repository.UfRepository;
 
 @Service

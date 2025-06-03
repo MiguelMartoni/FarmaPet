@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.controller;
+package com.FarmaPet.FarmaPet.Controller;
 
 import java.util.List;
 import java.util.Optional;

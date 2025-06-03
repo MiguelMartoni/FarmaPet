@@ -68,6 +68,10 @@ public class ModelMedicamento {
         this.tipoUso = tipoUso;
     }
 
+    public ModelMedicamento() {
+
+    }
+
     public int getId() {
         return id;
     }
