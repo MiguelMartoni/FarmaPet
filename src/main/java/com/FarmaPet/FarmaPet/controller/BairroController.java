@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelBairro;
-import com.FarmaPet.FarmaPet.Service.BairroService;
+import com.FarmaPet.FarmaPet.model.endereco.ModelBairro;
+import com.FarmaPet.FarmaPet.service.BairroService;
 
 @RestController
 @RequestMapping("/bairros")

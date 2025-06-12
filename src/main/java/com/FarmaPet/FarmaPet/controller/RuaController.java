@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
-import com.FarmaPet.FarmaPet.Service.RuaService;
+import com.FarmaPet.FarmaPet.model.endereco.ModelRua;
+import com.FarmaPet.FarmaPet.service.RuaService;
 
 @RestController
 @RequestMapping("/rua")

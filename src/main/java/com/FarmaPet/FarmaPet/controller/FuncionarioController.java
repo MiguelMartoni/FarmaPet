@@ -16,12 +16,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FarmaPet.FarmaPet.dtos.DtoFuncionario;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
-import com.FarmaPet.FarmaPet.Model.ModelFuncionario;
-import com.FarmaPet.FarmaPet.Model.ModelTipoCadastro;
-import com.FarmaPet.FarmaPet.Repository.EnderecoRepository;
-import com.FarmaPet.FarmaPet.Repository.TipoCadastroRepository;
-import com.FarmaPet.FarmaPet.Service.FuncionarioService;
+import com.FarmaPet.FarmaPet.model.endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.model.ModelFuncionario;
+import com.FarmaPet.FarmaPet.model.ModelTipoCadastro;
+import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
+import com.FarmaPet.FarmaPet.repository.TipoCadastroRepository;
+import com.FarmaPet.FarmaPet.service.FuncionarioService;
 
 import jakarta.validation.Valid;
 

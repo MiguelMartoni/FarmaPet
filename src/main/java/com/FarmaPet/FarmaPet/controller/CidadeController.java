@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelCidade;
-import com.FarmaPet.FarmaPet.Service.CidadeService;
+import com.FarmaPet.FarmaPet.model.endereco.ModelCidade;
+import com.FarmaPet.FarmaPet.service.CidadeService;
 
 @RestController
 @RequestMapping("/cidade")

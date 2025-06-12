@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FarmaPet.FarmaPet.dtos.DtoEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
-import com.FarmaPet.FarmaPet.Repository.EnderecoRepository;
-import com.FarmaPet.FarmaPet.Service.EnderecoService;
+import com.FarmaPet.FarmaPet.model.endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
+import com.FarmaPet.FarmaPet.service.EnderecoService;
 
 import jakarta.validation.Valid;
 

@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.FarmaPet.FarmaPet.dtos.DtoAnimal;
-import com.FarmaPet.FarmaPet.Model.ModelAnimal;
-import com.FarmaPet.FarmaPet.Model.ModelCliente;
-import com.FarmaPet.FarmaPet.Repository.AnimalRepository;
-import com.FarmaPet.FarmaPet.Repository.ClienteRepository;
+import com.FarmaPet.FarmaPet.model.ModelAnimal;
+import com.FarmaPet.FarmaPet.model.ModelCliente;
+import com.FarmaPet.FarmaPet.repository.AnimalRepository;
+import com.FarmaPet.FarmaPet.repository.ClienteRepository;
 
 import jakarta.validation.Valid;
 
