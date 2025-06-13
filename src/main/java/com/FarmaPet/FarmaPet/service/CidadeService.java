@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.Service;
+package com.FarmaPet.FarmaPet.service;
 
 import java.util.List;
 import java.util.Optional;
@@ -6,8 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelCidade;
-import com.FarmaPet.FarmaPet.Repository.CidadeRepository;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelCidade;
+import com.FarmaPet.FarmaPet.repository.CidadeRepository;
 
 @Service
 public class CidadeService {

@@ -1,9 +1,9 @@
 package com.FarmaPet.FarmaPet.Controller;
 
 import com.FarmaPet.FarmaPet.DTOs.DtoEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
-import com.FarmaPet.FarmaPet.Repository.EnderecoRepository;
-import com.FarmaPet.FarmaPet.Service.EnderecoService;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
+import com.FarmaPet.FarmaPet.service.EnderecoService;
 
 import jakarta.validation.Valid;
 

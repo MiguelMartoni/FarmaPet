@@ -1,6 +1,6 @@
-package com.FarmaPet.FarmaPet.Repository;
+package com.FarmaPet.FarmaPet.repository;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelRua;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.FarmaPet.FarmaPet.Model.ModelMedicamento;
-import com.FarmaPet.FarmaPet.Service.MedicamentoService;
+import com.FarmaPet.FarmaPet.model.ModelMedicamento;
+import com.FarmaPet.FarmaPet.service.MedicamentoService;
 
 import jakarta.validation.Valid;
 

@@ -1,10 +1,10 @@
 package com.FarmaPet.FarmaPet.Controller;
 
 import com.FarmaPet.FarmaPet.DTOs.DtoCliente;
-import com.FarmaPet.FarmaPet.Model.ModelCliente;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
-import com.FarmaPet.FarmaPet.Repository.EnderecoRepository;
-import com.FarmaPet.FarmaPet.Service.ClienteService;
+import com.FarmaPet.FarmaPet.model.ModelCliente;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
+import com.FarmaPet.FarmaPet.service.ClienteService;
 
 import jakarta.validation.Valid;
 import org.springframework.http.*;

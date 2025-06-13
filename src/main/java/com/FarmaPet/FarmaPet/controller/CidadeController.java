@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelCidade;
-import com.FarmaPet.FarmaPet.Service.CidadeService;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelCidade;
+import com.FarmaPet.FarmaPet.service.CidadeService;
 
 @RestController
 @RequestMapping("/cidade")

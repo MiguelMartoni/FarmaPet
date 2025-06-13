@@ -1,8 +1,7 @@
-package com.FarmaPet.FarmaPet.Service;
+package com.FarmaPet.FarmaPet.service;
 
-import com.FarmaPet.FarmaPet.Model.ModelFuncionario;
-import com.FarmaPet.FarmaPet.Repository.FuncionarioRepository;
-import com.FarmaPet.FarmaPet.Repository.FuncionarioRepository;
+import com.FarmaPet.FarmaPet.model.ModelFuncionario;
+import com.FarmaPet.FarmaPet.repository.FuncionarioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

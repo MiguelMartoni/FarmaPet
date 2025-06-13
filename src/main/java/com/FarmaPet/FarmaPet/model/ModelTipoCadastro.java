@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.Model;
+package com.FarmaPet.FarmaPet.model;
 
 import jakarta.persistence.*;
 

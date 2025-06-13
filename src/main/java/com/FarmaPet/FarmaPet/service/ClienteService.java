@@ -1,7 +1,7 @@
-package com.FarmaPet.FarmaPet.Service;
+package com.FarmaPet.FarmaPet.service;
 
-import com.FarmaPet.FarmaPet.Model.ModelCliente;
-import com.FarmaPet.FarmaPet.Repository.ClienteRepository;
+import com.FarmaPet.FarmaPet.model.ModelCliente;
+import com.FarmaPet.FarmaPet.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

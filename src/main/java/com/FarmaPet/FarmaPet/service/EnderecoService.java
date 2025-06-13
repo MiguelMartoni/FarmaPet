@@ -1,13 +1,13 @@
-package com.FarmaPet.FarmaPet.Service;
+package com.FarmaPet.FarmaPet.service;
 
 import com.FarmaPet.FarmaPet.DTOs.DtoEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelBairro;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelCidade;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelUf;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelBairro;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelCidade;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelRua;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelUf;
 
-import com.FarmaPet.FarmaPet.Repository.*;
+import com.FarmaPet.FarmaPet.repository.*;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

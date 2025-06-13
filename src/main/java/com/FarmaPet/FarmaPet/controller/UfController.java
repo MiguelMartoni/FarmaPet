@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelUf;
-import com.FarmaPet.FarmaPet.Service.UfService;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelUf;
+import com.FarmaPet.FarmaPet.service.UfService;
 
 @RestController
 @RequestMapping("/uf")

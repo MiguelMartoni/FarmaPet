@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelBairro;
-import com.FarmaPet.FarmaPet.Service.BairroService;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelBairro;
+import com.FarmaPet.FarmaPet.service.BairroService;
 
 @RestController
 @RequestMapping("/bairros")

@@ -1,12 +1,12 @@
-package com.FarmaPet.FarmaPet.Service;
+package com.FarmaPet.FarmaPet.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelUf;
-import com.FarmaPet.FarmaPet.Repository.UfRepository;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelUf;
+import com.FarmaPet.FarmaPet.repository.UfRepository;
 
 @Service
 public class UfService {

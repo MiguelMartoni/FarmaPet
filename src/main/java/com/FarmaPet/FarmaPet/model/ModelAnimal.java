@@ -1,10 +1,7 @@
-package com.FarmaPet.FarmaPet.Model;
+package com.FarmaPet.FarmaPet.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Positive;
 
 @Entity
 @Table(name = "animal")

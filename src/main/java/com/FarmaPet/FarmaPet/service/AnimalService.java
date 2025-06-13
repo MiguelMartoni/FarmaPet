@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.Service;
+package com.FarmaPet.FarmaPet.service;
 
 
 import java.util.List;
@@ -7,8 +7,8 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.FarmaPet.FarmaPet.Model.ModelAnimal;
-import com.FarmaPet.FarmaPet.Repository.AnimalRepository;
+import com.FarmaPet.FarmaPet.model.ModelAnimal;
+import com.FarmaPet.FarmaPet.repository.AnimalRepository;
 
 @Service
 public class AnimalService {

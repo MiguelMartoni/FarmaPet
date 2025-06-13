@@ -1,6 +1,6 @@
-package com.FarmaPet.FarmaPet.Model;
+package com.FarmaPet.FarmaPet.model;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 

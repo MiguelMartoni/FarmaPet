@@ -1,18 +1,18 @@
 package com.FarmaPet.FarmaPet.Controller;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelEndereco;
-import com.FarmaPet.FarmaPet.Model.ModelFuncionario;
-import com.FarmaPet.FarmaPet.Model.ModelTipoCadastro;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.model.ModelFuncionario;
+import com.FarmaPet.FarmaPet.model.ModelTipoCadastro;
 import com.FarmaPet.FarmaPet.DTOs.DtoFuncionario;
-import com.FarmaPet.FarmaPet.Repository.TipoCadastroRepository;
-import com.FarmaPet.FarmaPet.Service.FuncionarioService;
+import com.FarmaPet.FarmaPet.repository.TipoCadastroRepository;
+import com.FarmaPet.FarmaPet.service.FuncionarioService;
 import jakarta.validation.Valid;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import com.FarmaPet.FarmaPet.Repository.EnderecoRepository;
+import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
 
 import java.util.Optional;
 

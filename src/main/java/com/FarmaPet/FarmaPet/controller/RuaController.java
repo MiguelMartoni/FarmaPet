@@ -1,7 +1,7 @@
 package com.FarmaPet.FarmaPet.Controller;
 
-import com.FarmaPet.FarmaPet.Model.Endereco.ModelRua;
-import com.FarmaPet.FarmaPet.Service.RuaService;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelRua;
+import com.FarmaPet.FarmaPet.service.RuaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
