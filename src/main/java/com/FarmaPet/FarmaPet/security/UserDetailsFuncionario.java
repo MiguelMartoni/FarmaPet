@@ -17,42 +17,36 @@ public class UserDetailsFuncionario implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // Nenhuma role/authority definida por enquanto
         return Collections.emptyList();
     }
 
     @Override
     public String getPassword() {
-        return funcionario.getSenha(); // Campo senha no ModelFuncionario
+        return funcionario.getSenha();
     }
 
     @Override
     public String getUsername() {
-        return funcionario.getNomeUsuario(); // Pode ser substituído por email ou CPF
+        return funcionario.getNomeUsuario();
     }
 
     @Override
     public boolean isAccountNonExpired() {
-        return true; // Personalize se necessário
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return true; // Personalize se necessário
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return true; // Personalize se necessário
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        // Aqui o login só será permitido se houver tipo de cadastro associado
-        return funcionario.getTipoCadastro() != null;
-    }
-
-    public ModelFuncionario getFuncionario() {
-        return funcionario;
+        return true;
     }
 }
