@@ -1,7 +1,9 @@
-package com.FarmaPet.FarmaPet.DTOs;
+package com.FarmaPet.FarmaPet.dtos;
 
-import jakarta.validation.constraints.*;
 import java.time.LocalDate;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record DtoCliente(
         @NotBlank String nome,

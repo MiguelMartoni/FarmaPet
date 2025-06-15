@@ -1,17 +1,21 @@
-package com.FarmaPet.FarmaPet.Controller;
+package com.FarmaPet.FarmaPet.controller;
 
-import com.FarmaPet.FarmaPet.DTOs.DtoEndereco;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.FarmaPet.FarmaPet.dtos.DtoEndereco;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
 import com.FarmaPet.FarmaPet.service.EnderecoService;
 
 import jakarta.validation.Valid;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/endereco")

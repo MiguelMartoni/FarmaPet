@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.DTOs;
+package com.FarmaPet.FarmaPet.dtos;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;

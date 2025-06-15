@@ -1,4 +1,4 @@
-package com.FarmaPet.FarmaPet.Model.Endereco;
+package com.FarmaPet.FarmaPet.model.Endereco;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

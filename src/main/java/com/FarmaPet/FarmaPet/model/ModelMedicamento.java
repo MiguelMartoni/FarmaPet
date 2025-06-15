@@ -1,6 +1,10 @@
+
 package com.FarmaPet.FarmaPet.model;
 
 import java.util.Date;
+
+import com.FarmaPet.FarmaPet.Enums.MedicamentoAtivo;
+import com.FarmaPet.FarmaPet.Enums.TipoUso;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,10 +17,7 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
-enum TipoUso {
-    INTERNO,
-    EXTERNO
-}
+
 
 @Entity
 @Table(name = "medicamento")
@@ -52,24 +53,62 @@ public class ModelMedicamento {
     private int idadeIndicada;
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "Medicamento_Ativo", nullable = false)
+    private MedicamentoAtivo medicamentoativo;
+
+    @Enumerated(EnumType.STRING)
     @Column(name = "tipo_uso", nullable = false)
     private TipoUso tipoUso;
 
-    public ModelMedicamento(Date dataValidade, String dosagem, String especieIndicada, int id, int idadeIndicada, String nome, float pesoIndicado, String principioAtivo, boolean receitaObrigatoria, TipoUso tipoUso) {
+    @Column(length = 255) // Armazena o caminho ou URL da foto
+    private String foto;
+
+    @Column(name = "quantidade_estoque", nullable = false)
+    private int quantidadeEstoque;
+
+    public ModelMedicamento(Date dataValidade, String dosagem, String especieIndicada, String foto, int id, int idadeIndicada, MedicamentoAtivo medicamentoativo, String nome, float pesoIndicado, String principioAtivo, int quantidadeEstoque, boolean receitaObrigatoria, TipoUso tipoUso) {
         this.dataValidade = dataValidade;
         this.dosagem = dosagem;
         this.especieIndicada = especieIndicada;
+        this.foto = foto;
         this.id = id;
         this.idadeIndicada = idadeIndicada;
+        this.medicamentoativo = medicamentoativo;
         this.nome = nome;
         this.pesoIndicado = pesoIndicado;
         this.principioAtivo = principioAtivo;
+        this.quantidadeEstoque = quantidadeEstoque;
         this.receitaObrigatoria = receitaObrigatoria;
         this.tipoUso = tipoUso;
     }
 
     public ModelMedicamento() {
+    }
 
+
+
+    public int getQuantidadeEstoque() {
+        return quantidadeEstoque;
+    }
+
+    public void setQuantidadeEstoque(int quantidadeEstoque) {
+        this.quantidadeEstoque = quantidadeEstoque;
+    }
+
+    public MedicamentoAtivo getMedicamentoativo() {
+        return medicamentoativo;
+    }
+
+    public void setMedicamentoativo(MedicamentoAtivo medicamentoativo) {
+        this.medicamentoativo = medicamentoativo;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 
     public int getId() {

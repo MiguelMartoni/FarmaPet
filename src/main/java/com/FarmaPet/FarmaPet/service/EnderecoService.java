@@ -1,16 +1,21 @@
 package com.FarmaPet.FarmaPet.service;
 
-import com.FarmaPet.FarmaPet.DTOs.DtoEndereco;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.FarmaPet.FarmaPet.dtos.DtoEndereco;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelBairro;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelCidade;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelRua;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelUf;
+import com.FarmaPet.FarmaPet.repository.BairroRepository;
+import com.FarmaPet.FarmaPet.repository.CidadeRepository;
+import com.FarmaPet.FarmaPet.repository.EnderecoRepository;
+import com.FarmaPet.FarmaPet.repository.RuaRepository;
+import com.FarmaPet.FarmaPet.repository.UfRepository;
 
-import com.FarmaPet.FarmaPet.repository.*;
 import jakarta.persistence.EntityNotFoundException;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class EnderecoService {
