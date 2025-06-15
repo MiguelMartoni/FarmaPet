@@ -11,11 +11,11 @@ public class ModelBairro {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idBairro;
+    private Integer idBairro;
 
     private String descricao;
 
-    public ModelBairro(String descricao, int idBairro) {
+    public ModelBairro(String descricao, Integer idBairro) {
         this.descricao = descricao;
         this.idBairro = idBairro;
     }
