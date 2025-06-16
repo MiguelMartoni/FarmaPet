@@ -1,5 +1,6 @@
 package com.FarmaPet.FarmaPet.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.FarmaPet.FarmaPet.dtos.DtoMedicamento;
 import com.FarmaPet.FarmaPet.dtos.DtoMovimentacaoEstoque;
+import com.FarmaPet.FarmaPet.dtos.DtoMovimentacaoEstoqueMultipla;
 import com.FarmaPet.FarmaPet.model.ModelMedicamento;
 import com.FarmaPet.FarmaPet.service.MedicamentoService;
 
@@ -96,31 +98,79 @@ public class MedicamentoController {
         medicamento.setQuantidadeEstoque(dto.quantidadeEstoque());
     }
 
-    @PutMapping("/{id}/estoque")
-    public ResponseEntity<Object> movimentarEstoque(@PathVariable int id,
-            @RequestBody @Valid DtoMovimentacaoEstoque dto) {
-        Optional<ModelMedicamento> medicamentoOptional = medicamentoService.findById(id);
+@PutMapping("/{id}/estoque")
+public ResponseEntity<Object> movimentarEstoque(@PathVariable int id,
+        @RequestBody @Valid DtoMovimentacaoEstoque dto) {
+    Optional<ModelMedicamento> medicamentoOptional = medicamentoService.findById(id);
+    if (!medicamentoOptional.isPresent()) {
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Medicamento não encontrado.");
+    }
+
+    // Validação para quantidade > 0
+    if (dto.quantidade() <= 0) {
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body("Quantidade deve ser maior que zero para movimentação de estoque.");
+    }
+
+    ModelMedicamento medicamento = medicamentoOptional.get();
+    int estoqueAtual = medicamento.getQuantidadeEstoque();
+
+    int novaQuantidade;
+    if (dto.tipo() == DtoMovimentacaoEstoque.TipoMovimentacao.ENTRADA) {
+        novaQuantidade = estoqueAtual + dto.quantidade();
+    } else { // SAIDA
+        if (dto.quantidade() > estoqueAtual) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Quantidade em estoque insuficiente.");
+        }
+        novaQuantidade = estoqueAtual - dto.quantidade();
+    }
+
+    medicamento.setQuantidadeEstoque(novaQuantidade);
+    medicamentoService.save(medicamento);
+
+    return ResponseEntity.ok("Estoque atualizado com sucesso. Nova quantidade: " + novaQuantidade);
+}
+
+// NOVO ENDPOINT para movimentação de estoque em múltiplos medicamentos
+@PutMapping("/estoque/multiplos")
+public ResponseEntity<Object> movimentarEstoqueMultiplos(
+        @RequestBody List<DtoMovimentacaoEstoqueMultipla> movimentacoes) {
+
+    List<String> resultados = new ArrayList<>();
+
+    for (DtoMovimentacaoEstoqueMultipla dto : movimentacoes) {
+        Optional<ModelMedicamento> medicamentoOptional = medicamentoService.findById(dto.id());
         if (!medicamentoOptional.isPresent()) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Medicamento não encontrado.");
+            resultados.add("Medicamento ID " + dto.id() + " não encontrado.");
+            continue;
+        }
+
+        // Validação para quantidade > 0
+        if (dto.quantidade() <= 0) {
+            resultados.add("Quantidade inválida para medicamento ID " + dto.id() + ": deve ser maior que zero.");
+            continue;
         }
 
         ModelMedicamento medicamento = medicamentoOptional.get();
         int estoqueAtual = medicamento.getQuantidadeEstoque();
-
         int novaQuantidade;
+
         if (dto.tipo() == DtoMovimentacaoEstoque.TipoMovimentacao.ENTRADA) {
             novaQuantidade = estoqueAtual + dto.quantidade();
-        } else { // SAIDA
+        } else {
             if (dto.quantidade() > estoqueAtual) {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST)
-                        .body("Quantidade em estoque insuficiente.");
+                resultados.add("Estoque insuficiente para medicamento ID " + dto.id());
+                continue;
             }
             novaQuantidade = estoqueAtual - dto.quantidade();
         }
 
         medicamento.setQuantidadeEstoque(novaQuantidade);
         medicamentoService.save(medicamento);
-
-        return ResponseEntity.ok("Estoque atualizado com sucesso. Nova quantidade: " + novaQuantidade);
+        resultados.add("Estoque atualizado para medicamento ID " + dto.id() + ": " + novaQuantidade);
     }
+
+    return ResponseEntity.ok(resultados);
+}
 }

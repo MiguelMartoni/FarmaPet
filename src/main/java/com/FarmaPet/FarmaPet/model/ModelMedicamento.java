@@ -13,11 +13,10 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Lob;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
-
-
 
 @Entity
 @Table(name = "medicamento")
@@ -60,13 +59,16 @@ public class ModelMedicamento {
     @Column(name = "tipo_uso", nullable = false)
     private TipoUso tipoUso;
 
-    @Column(length = 255) // Armazena o caminho ou URL da foto
+    @Lob
+    @Column(columnDefinition = "TEXT")
     private String foto;
 
     @Column(name = "quantidade_estoque", nullable = false)
     private int quantidadeEstoque;
 
-    public ModelMedicamento(Date dataValidade, String dosagem, String especieIndicada, String foto, int id, int idadeIndicada, MedicamentoAtivo medicamentoativo, String nome, float pesoIndicado, String principioAtivo, int quantidadeEstoque, boolean receitaObrigatoria, TipoUso tipoUso) {
+    public ModelMedicamento(Date dataValidade, String dosagem, String especieIndicada, String foto, int id,
+            int idadeIndicada, MedicamentoAtivo medicamentoativo, String nome, float pesoIndicado,
+            String principioAtivo, int quantidadeEstoque, boolean receitaObrigatoria, TipoUso tipoUso) {
         this.dataValidade = dataValidade;
         this.dosagem = dosagem;
         this.especieIndicada = especieIndicada;
@@ -84,8 +86,6 @@ public class ModelMedicamento {
 
     public ModelMedicamento() {
     }
-
-
 
     public int getQuantidadeEstoque() {
         return quantidadeEstoque;
