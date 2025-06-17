@@ -22,13 +22,13 @@ public class RuaController {
     @Autowired
     private RuaService ruaService;
 
-    @PostMapping("/add")
+    @PostMapping()
     public ResponseEntity<ModelRua> addRua(@RequestBody ModelRua rua) {
         ModelRua savedRua = ruaService.saveRua(rua);
         return ResponseEntity.ok(savedRua);
     }
 
-    @GetMapping("/list")
+    @GetMapping()
     public ResponseEntity<List<ModelRua>> listRuas() {
         return ResponseEntity.ok(ruaService.listAll());
     }
@@ -40,7 +40,7 @@ public class RuaController {
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/delete/{id}")
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRua(@PathVariable int id) {
         ruaService.deleteRua(id);
         return ResponseEntity.noContent().build();
