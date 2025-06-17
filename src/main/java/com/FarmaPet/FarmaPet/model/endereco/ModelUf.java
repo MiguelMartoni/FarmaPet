@@ -17,7 +17,13 @@ public class ModelUf {
     private String sigla;
     private String descricao;
 
-    // Getters and Setters
+    public ModelUf(){}
+
+    public ModelUf(int idUf, String sigla, String descricao) {
+        this.idUf = idUf;
+        this.sigla = sigla;
+        this.descricao = descricao;
+    }
 
     public int getIdUf() {
         return idUf;
