@@ -1,6 +1,7 @@
 package com.FarmaPet.FarmaPet.service;
 
 import com.FarmaPet.FarmaPet.model.ModelFuncionario;
+import com.FarmaPet.FarmaPet.model.endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.repository.FuncionarioRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,5 +31,9 @@ public class FuncionarioService {
     @Transactional
     public void delete(ModelFuncionario funcionario) {
         funcionarioRepository.delete(funcionario);
+    }
+
+    public List<ModelFuncionario> findByEndereco(ModelEndereco endereco) {
+        return funcionarioRepository.findByEndereco(endereco);
     }
 }

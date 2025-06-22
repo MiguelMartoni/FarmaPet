@@ -1,7 +1,9 @@
 package com.FarmaPet.FarmaPet.service;
 
 import com.FarmaPet.FarmaPet.model.ModelCliente;
+import com.FarmaPet.FarmaPet.model.endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -10,6 +12,8 @@ import java.util.Optional;
 
 @Service
 public class ClienteService {
+
+    @Autowired ClienteRepository clienteRepository;
 
     private final ClienteRepository repo;
 
@@ -38,5 +42,9 @@ public class ClienteService {
     @Transactional
     public void delete(ModelCliente cliente) {
         repo.delete(cliente);
+    }
+
+    public List<ModelCliente> findByEndereco(ModelEndereco endereco) {
+        return clienteRepository.findByEndereco(endereco);
     }
 }

@@ -9,5 +9,5 @@ public record DtoCliente(
         @NotNull LocalDate dataNasc,
         @NotBlank String email,
         @NotBlank String telefone,
-        @NotNull Long enderecoId
+        Long enderecoId
 ) {}
