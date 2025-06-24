@@ -1,6 +1,7 @@
 package com.FarmaPet.FarmaPet.controller;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.http.HttpStatus;
@@ -89,7 +90,12 @@ public class AnimalController {
         animal.setCliente(clienteOpt.get());
 
         animalRepo.save(animal);
-        return ResponseEntity.ok(animal);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(Map.of(
+                        "success", true,
+                        "message", "Pet cadastrado com sucesso!",
+                        "animal", animal));
+
     }
 
     @DeleteMapping("/{id}")
@@ -102,4 +108,22 @@ public class AnimalController {
         animalRepo.deleteById(id);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
+
+    @PutMapping("/{id}/desvincular")
+    public ResponseEntity<Object> desvincularAnimal(@PathVariable int id) {
+        Optional<ModelAnimal> animalOpt = animalRepo.findById(id);
+        if (animalOpt.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Animal não encontrado.");
+        }
+
+        ModelAnimal animal = animalOpt.get();
+        animal.setCliente(null); // remove a associação com o cliente
+        animalRepo.save(animal);
+
+        return ResponseEntity.ok(Map.of(
+                "success", true,
+                "message", "Pet desvinculado do cliente com sucesso.",
+                "animal", animal));
+    }
+
 }

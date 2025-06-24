@@ -11,16 +11,16 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.PositiveOrZero;
 
 public record DtoMedicamento(
-    @NotBlank String nome,
-    @NotBlank String principioAtivo,
-    @NotBlank String dosagem,
-    @NotBlank String especieIndicada,
-    @NotNull @Future LocalDate dataValidade,
-    @NotNull Boolean receitaObrigatoria,
-    @PositiveOrZero Float pesoIndicado,
-    @PositiveOrZero Integer idadeIndicada,
-    @NotNull TipoUso tipoUso,
-    @NotNull MedicamentoAtivo medicamentoativo,
-    @NotBlank String foto,
-    @PositiveOrZero @NotNull Integer quantidadeEstoque
-) {}
+        @NotBlank String nome,
+        @NotBlank String principioAtivo,
+        @NotBlank String dosagem,
+        @NotBlank String especieIndicada,
+        @NotNull @Future LocalDate dataValidade,
+        @NotNull Boolean receitaObrigatoria,
+        @PositiveOrZero Float pesoIndicado,
+        @PositiveOrZero Integer idadeIndicada,
+        @NotNull TipoUso tipoUso,
+        @NotNull MedicamentoAtivo medicamentoativo,
+        String foto,
+        @PositiveOrZero @NotNull Integer quantidadeEstoque) {
+}
