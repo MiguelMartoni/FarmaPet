@@ -7,15 +7,17 @@ import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
 
+import com.FarmaPet.FarmaPet.model.ModelAnimal;
+
 @Entity
 @Table(name = "cliente")
-public class ModelCliente extends ModelPessoa {
+public class ModelCliente extends com.FarmaPet.FarmaPet.model.ModelPessoa {
 
     @OneToMany(mappedBy = "cliente", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonManagedReference
     private List<ModelAnimal> animais;
 
-    public ModelCliente(){}
+    public ModelCliente() {}
 
     public ModelCliente(String nome, String cpf, LocalDate dataNasc, ModelEndereco endereco, String email, String telefone, List<ModelAnimal> animais) {
         super(nome, cpf, dataNasc, endereco, email, telefone);
