@@ -1,5 +1,6 @@
 package com.FarmaPet.FarmaPet.model.endereco;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -14,16 +15,13 @@ public class ModelUf {
     @Name("id_uf")
     private int idUf;
 
+    @Column(name = "sigla", nullable = false, unique = true, length = 2)
     private String sigla;
+
+    @Column(name = "descricao", nullable = false)
     private String descricao;
 
-    public ModelUf(){}
-
-    public ModelUf(int idUf, String sigla, String descricao) {
-        this.idUf = idUf;
-        this.sigla = sigla;
-        this.descricao = descricao;
-    }
+    // Getters and Setters
 
     public int getIdUf() {
         return idUf;

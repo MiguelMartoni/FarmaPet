@@ -45,4 +45,8 @@ public class MedicamentoService {
     public void delete(ModelMedicamento medicamento) {
         repository.delete(medicamento);
     }
+
+    public List<ModelMedicamento> findByQuantidadeEstoqueGreaterThan(int quantidade) {
+        return repository.findByQuantidadeEstoqueGreaterThan(quantidade);
+    }
 }

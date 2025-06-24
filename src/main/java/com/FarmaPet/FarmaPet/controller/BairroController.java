@@ -2,7 +2,6 @@ package com.FarmaPet.FarmaPet.controller;
 
 import java.util.List;
 
-import com.FarmaPet.FarmaPet.model.endereco.ModelBairro;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.FarmaPet.FarmaPet.model.endereco.ModelBairro;
 import com.FarmaPet.FarmaPet.service.BairroService;
 
 @RestController
@@ -47,4 +47,6 @@ public class BairroController {
         bairroService.deletarPorId(id);
         return ResponseEntity.noContent().build();
     }
+
+    
 }
