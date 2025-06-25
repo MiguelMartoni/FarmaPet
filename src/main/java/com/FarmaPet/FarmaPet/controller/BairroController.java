@@ -47,4 +47,6 @@ public class BairroController {
         bairroService.deletarPorId(id);
         return ResponseEntity.noContent().build();
     }
+
+    
 }

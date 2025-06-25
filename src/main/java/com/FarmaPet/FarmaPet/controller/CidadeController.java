@@ -52,4 +52,6 @@ public class CidadeController {
         cidadeService.deletar(id);
         return ResponseEntity.noContent().build();
     }
+
+    
 }

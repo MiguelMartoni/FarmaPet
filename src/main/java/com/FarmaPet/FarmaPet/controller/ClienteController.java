@@ -58,15 +58,14 @@ public class ClienteController {
 
         var cliente = new ModelCliente(
                 dto.nome(), dto.cpf(), dto.dataNasc(),
-                enderecoOptional.get(), dto.email(), dto.telefone(), null
-        );
+                enderecoOptional.get(), dto.email(), dto.telefone(), null);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(cliente));
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> atualizar(@PathVariable Integer id,
-                                            @RequestBody @Valid DtoCliente dto) {
+            @RequestBody @Valid DtoCliente dto) {
         Optional<ModelCliente> optional = service.findById(id);
         if (optional.isEmpty()) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Cliente não encontrado.");
@@ -97,4 +96,10 @@ public class ClienteController {
         service.delete(optional.get());
         return ResponseEntity.ok("Cliente removido com sucesso.");
     }
+
+    @GetMapping("/cidades")
+    public List<String> listarCidadesComClientes() {
+        return service.listarCidadesComClientes();
+    }
+
 }

@@ -1,47 +1,52 @@
 package com.FarmaPet.FarmaPet.controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.FarmaPet.FarmaPet.model.Endereco.ModelRua;
 import com.FarmaPet.FarmaPet.service.RuaService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
-@RequestMapping("/rua")
+@RequestMapping("/ruas")  // Mudei para plural seguindo convenções REST
 public class RuaController {
 
-    @Autowired
-    private RuaService ruaService;
+    private final RuaService ruaService;
 
-    @PostMapping("/add")
-    public ResponseEntity<ModelRua> addRua(@RequestBody ModelRua rua) {
-        ModelRua savedRua = ruaService.saveRua(rua);
-        return ResponseEntity.ok(savedRua);
+    // Injeção por construtor (mais seguro que @Autowired em campo)
+    public RuaController(RuaService ruaService) {
+        this.ruaService = ruaService;
     }
 
-    @GetMapping("/list")
-    public ResponseEntity<List<ModelRua>> listRuas() {
-        return ResponseEntity.ok(ruaService.listAll());
+    @PostMapping
+    public ResponseEntity<ModelRua> cadastrarRua(@RequestBody ModelRua rua) {
+        ModelRua novaRua = ruaService.saveRua(rua);
+        return ResponseEntity.status(HttpStatus.CREATED).body(novaRua);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ModelRua>> listarTodas() {
+        List<ModelRua> ruas = ruaService.listAll();
+        return ResponseEntity.ok(ruas);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<ModelRua> getRuaById(@PathVariable int id) {
+    public ResponseEntity<ModelRua> buscarPorId(@PathVariable int id) {
         return ruaService.findById(id)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
 
-    @DeleteMapping("/delete/{id}")
-    public ResponseEntity<Void> deleteRua(@PathVariable int id) {
+    @GetMapping("/por-nome/{nome}")
+    public ResponseEntity<ModelRua> buscarPorNome(@PathVariable String nome) {
+        return ruaService.findByDescricao(nome)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deletarRua(@PathVariable int id) {
         ruaService.deleteRua(id);
         return ResponseEntity.noContent().build();
     }

@@ -8,6 +8,7 @@ public record DtoEndereco(
         Long cidadeId,
         Long ufId,
         @NotBlank String cep,
-        String numero
+        String numero,
+        String complemento
 ) {}
 

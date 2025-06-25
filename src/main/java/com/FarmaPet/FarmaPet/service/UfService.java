@@ -36,9 +36,13 @@ public class UfService {
     public ModelUf atualizarUf(int id, ModelUf ufAtualizada) {
         return ufRepository.findById(id).map(uf -> {
             uf.setSigla(ufAtualizada.getSigla());
-            uf.setDescricao(ufAtualizada.getDescricao());  // corrigido aqui
+            uf.setDescricao(ufAtualizada.getDescricao()); // corrigido aqui
             return ufRepository.save(uf);
         }).orElseThrow(() -> new RuntimeException("UF não encontrada"));
+    }
+
+    public Optional<ModelUf> buscarPorSigla(String sigla) {
+        return ufRepository.findBySiglaIgnoreCase(sigla);
     }
 
 }

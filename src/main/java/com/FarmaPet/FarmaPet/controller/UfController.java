@@ -25,6 +25,13 @@ public class UfController {
         this.ufService = ufService;
     }
 
+    @GetMapping("/sigla/{sigla}")
+    public ResponseEntity<ModelUf> buscarPorSigla(@PathVariable String sigla) {
+        return ufService.buscarPorSigla(sigla)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
     @GetMapping
     public List<ModelUf> listarTodos() {
         return ufService.listarTodos();

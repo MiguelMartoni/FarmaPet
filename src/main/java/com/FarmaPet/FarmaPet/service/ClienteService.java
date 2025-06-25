@@ -1,12 +1,14 @@
 package com.FarmaPet.FarmaPet.service;
 
-import com.FarmaPet.FarmaPet.model.ModelCliente;
-import com.FarmaPet.FarmaPet.repository.ClienteRepository;
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Optional;
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
+import com.FarmaPet.FarmaPet.model.ModelCliente;
+import com.FarmaPet.FarmaPet.repository.ClienteRepository;
 
 @Service
 public class ClienteService {
@@ -38,5 +40,13 @@ public class ClienteService {
     @Transactional
     public void delete(ModelCliente cliente) {
         repo.delete(cliente);
+    }
+
+    public List<ModelCliente> findByEndereco(ModelEndereco endereco) {
+        return repo.findByEndereco(endereco);
+    }
+
+    public List<String> listarCidadesComClientes() {
+        return repo.buscarNomesDasCidadesComClientes();
     }
 }

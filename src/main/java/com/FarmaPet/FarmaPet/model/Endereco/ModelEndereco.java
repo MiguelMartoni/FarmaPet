@@ -1,11 +1,13 @@
 package com.FarmaPet.FarmaPet.model.Endereco;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class ModelEndereco {
@@ -16,6 +18,10 @@ public class ModelEndereco {
 
     private String cep;
     private String numero;
+
+    @Size(max = 100, message = "Complemento deve ter no máximo 100 caracteres")
+    @Column(length = 100)
+    private String complemento; // Adicionei este campo que estava faltando
 
     @ManyToOne
     @JoinColumn(name = "id_bairro")
@@ -33,18 +39,19 @@ public class ModelEndereco {
     @JoinColumn(name = "id_uf")
     private ModelUf uf;
 
-    public ModelEndereco(ModelBairro bairro, String cep, ModelCidade cidade, long idEndereco, String numero, ModelRua rua, ModelUf uf) {
+    public ModelEndereco() {
+        // Construtor padrão
+    }
+
+    public ModelEndereco(ModelBairro bairro, String cep, ModelCidade cidade, String complemento, long idEndereco, String numero, ModelRua rua, ModelUf uf) {
         this.bairro = bairro;
         this.cep = cep;
         this.cidade = cidade;
+        this.complemento = complemento;
         this.idEndereco = idEndereco;
         this.numero = numero;
         this.rua = rua;
         this.uf = uf;
-    }
-
-    public ModelEndereco() {
-        // Construtor padrão
     }
 
     // Getters e Setters
@@ -103,5 +110,13 @@ public class ModelEndereco {
 
     public void setUf(ModelUf uf) {
         this.uf = uf;
+    }
+
+    public String getComplemento() {
+        return complemento;
+    }
+
+    public void setComplemento(String complemento) {
+        this.complemento = complemento;
     }
 }

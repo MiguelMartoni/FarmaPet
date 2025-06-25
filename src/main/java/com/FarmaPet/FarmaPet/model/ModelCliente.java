@@ -1,11 +1,15 @@
 package com.FarmaPet.FarmaPet.model;
 
-import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import jakarta.persistence.*;
-
 import java.time.LocalDate;
 import java.util.List;
+
+import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Entity;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "cliente")
@@ -29,4 +33,5 @@ public class ModelCliente extends ModelPessoa {
     public void setAnimais(List<ModelAnimal> animais) {
         this.animais = animais;
     }
+    
 }
