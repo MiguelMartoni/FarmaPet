@@ -107,6 +107,7 @@ public class SecurityConfig {
         return configuration.getAuthenticationManager();
     }
 
+    @Deprecated
     @Bean
     public PasswordEncoder passwordEncoder() {
         return NoOpPasswordEncoder.getInstance();
