@@ -22,14 +22,19 @@ public class ModelFuncionario extends ModelPessoa {
     @Column(nullable = false)
     private boolean usuarioAtivo;
 
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String foto;
+
     public ModelFuncionario(){}
 
-    public ModelFuncionario(String nome, String cpf, LocalDate dataNasc, ModelEndereco endereco, String email, String telefone, String nomeUsuario, String senha, ModelTipoCadastro tipoCadastro, boolean usuarioAtivo) {
+    public ModelFuncionario(String nome, String cpf, LocalDate dataNasc, ModelEndereco endereco, String email, String telefone, String nomeUsuario, String senha, ModelTipoCadastro tipoCadastro, boolean usuarioAtivo, String foto) {
         super(nome, cpf, dataNasc, endereco, email, telefone);
         this.nomeUsuario = nomeUsuario;
         this.senha = senha;
         this.tipoCadastro = tipoCadastro;
         this.usuarioAtivo = usuarioAtivo;
+        this.foto = foto;
     }
 
     public String getNomeUsuario() {
@@ -62,5 +67,13 @@ public class ModelFuncionario extends ModelPessoa {
 
     public void setUsuarioAtivo(boolean usuarioAtivo) {
         this.usuarioAtivo = usuarioAtivo;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

@@ -2,14 +2,7 @@ package com.FarmaPet.FarmaPet.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "animal")
@@ -39,7 +32,11 @@ public class ModelAnimal {
     @JsonBackReference
     private ModelCliente cliente;
 
-    public ModelAnimal(int id, String nome, String especie, String raca, int idade, float peso, ModelCliente cliente) {
+    @Lob
+    @Column(columnDefinition = "TEXT")
+    private String foto;
+
+    public ModelAnimal(int id, String nome, String especie, String raca, int idade, float peso, ModelCliente cliente, String foto) {
         this.id = id;
         this.nome = nome;
         this.especie = especie;
@@ -47,6 +44,7 @@ public class ModelAnimal {
         this.idade = idade;
         this.peso = peso;
         this.cliente = cliente;
+        this.foto = foto;
     }
 
     public ModelAnimal() {
@@ -107,5 +105,13 @@ public class ModelAnimal {
 
     public void setCliente(ModelCliente cliente) {
         this.cliente = cliente;
+    }
+
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
     }
 }

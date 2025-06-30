@@ -54,6 +54,9 @@ public class FuncionarioController {
         funcionario.setTipoCadastro(tipoCadastroOpt.get());
         funcionario.setEndereco(enderecoOpt.get());
         funcionario.setDataNasc(dto.dataNasc());
+        if (dto.foto() != null) {
+            funcionario.setFoto(dto.foto());
+        }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(funcionarioService.save(funcionario));
     }
@@ -90,6 +93,9 @@ public class FuncionarioController {
         BeanUtils.copyProperties(dto, funcionario);
         funcionario.setId(id);
         funcionario.setTipoCadastro(tipoCadastroOpt.get());
+        if (dto.foto() != null) {
+            funcionario.setFoto(dto.foto());
+        }
 
         return ResponseEntity.ok(funcionarioService.save(funcionario));
     }

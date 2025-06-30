@@ -3,6 +3,7 @@ package com.FarmaPet.FarmaPet.controller;
 import java.util.List;
 import java.util.Optional;
 
+import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -51,17 +52,22 @@ public class ClienteController {
 
     @PostMapping
     public ResponseEntity<Object> criar(@RequestBody @Valid DtoCliente dto) {
-        Optional<ModelEndereco> enderecoOptional = enderecoRepo.findById(dto.enderecoId());
-        if (enderecoOptional.isEmpty()) {
+        Optional<ModelEndereco> enderecoOpt = enderecoRepo.findById(dto.enderecoId());
+        if (enderecoOpt.isEmpty()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Endereço não encontrado.");
         }
 
-        var cliente = new ModelCliente(
-                dto.nome(), dto.cpf(), dto.dataNasc(),
-                enderecoOptional.get(), dto.email(), dto.telefone(), null);
+        var cliente = new ModelCliente();
+        BeanUtils.copyProperties(dto, cliente);
+        cliente.setEndereco(enderecoOpt.get());
+        cliente.setDataNasc(dto.dataNasc());
+        if (dto.foto() != null) {
+            cliente.setFoto(dto.foto());
+        }
 
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(cliente));
     }
+
 
     @PutMapping("/{id}")
     public ResponseEntity<Object> atualizar(@PathVariable Integer id,

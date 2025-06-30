@@ -11,5 +11,6 @@ public record DtoAnimal(
         @NotBlank String raca,
         @Min(0) Integer idade,
         @Positive Float peso,
-        @NotNull Integer clienteId
+        @NotNull Integer clienteId,
+        String foto
 ) {}

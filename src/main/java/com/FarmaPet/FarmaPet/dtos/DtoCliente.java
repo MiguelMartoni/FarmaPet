@@ -11,5 +11,6 @@ public record DtoCliente(
         @NotNull LocalDate dataNasc,
         @NotBlank String email,
         @NotBlank String telefone,
-        Long enderecoId
+        Long enderecoId,
+        String foto
 ) {}

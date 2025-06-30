@@ -15,5 +15,6 @@ public record DtoFuncionario(
         @NotNull Long tipoCadastroId,
         @NotNull Boolean usuarioAtivo,
         @NotNull LocalDate dataNasc,
-        Long enderecoId
+        Long enderecoId,
+        String foto
 ) {}

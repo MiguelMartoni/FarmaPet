@@ -49,6 +49,9 @@ public class AnimalController {
         animal.setIdade(dto.idade());
         animal.setPeso(dto.peso());
         animal.setCliente(clienteOpt.get());
+        if (dto.foto() != null) {
+            animal.setFoto(dto.foto());
+        }
 
         animalRepo.save(animal);
         return ResponseEntity.status(HttpStatus.CREATED).body(animal);
@@ -88,6 +91,9 @@ public class AnimalController {
         animal.setIdade(dto.idade());
         animal.setPeso(dto.peso());
         animal.setCliente(clienteOpt.get());
+        if (dto.foto() != null) {
+            animal.setFoto(dto.foto());
+        }
 
         animalRepo.save(animal);
         return ResponseEntity.status(HttpStatus.CREATED)
