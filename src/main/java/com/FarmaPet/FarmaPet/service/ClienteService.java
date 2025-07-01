@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.FarmaPet.FarmaPet.dtos.CidadeQuantidadeDTO;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.model.ModelCliente;
 import com.FarmaPet.FarmaPet.repository.ClienteRepository;
@@ -48,5 +49,9 @@ public class ClienteService {
 
     public List<String> listarCidadesComClientes() {
         return repo.buscarNomesDasCidadesComClientes();
+    }
+
+    public List<CidadeQuantidadeDTO> buscarQuantidadePorCidade() {
+        return repo.buscarQuantidadePorCidade();
     }
 }

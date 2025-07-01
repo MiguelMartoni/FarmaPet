@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.FarmaPet.FarmaPet.dtos.CidadeQuantidadeDTO;
 import com.FarmaPet.FarmaPet.dtos.DtoCliente;
 import com.FarmaPet.FarmaPet.model.Endereco.ModelEndereco;
 import com.FarmaPet.FarmaPet.model.ModelCliente;
@@ -68,7 +69,6 @@ public class ClienteController {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.save(cliente));
     }
 
-
     @PutMapping("/{id}")
     public ResponseEntity<Object> atualizar(@PathVariable Integer id,
             @RequestBody @Valid DtoCliente dto) {
@@ -103,9 +103,10 @@ public class ClienteController {
         return ResponseEntity.ok("Cliente removido com sucesso.");
     }
 
+    // ✅ NOVO MÉTODO: quantidade de clientes por cidade (com DTO)
     @GetMapping("/cidades")
-    public List<String> listarCidadesComClientes() {
-        return service.listarCidadesComClientes();
+    public List<CidadeQuantidadeDTO> clientesPorCidade() {
+        return service.buscarQuantidadePorCidade();
     }
 
 }
